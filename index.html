@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaanvi Toshniwal — Graphic Designer & Video Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ffd6e8; --peach:#ffe8d6; --mint:#d6f5e3; --sky:#d6ecff;
+  --lilac:#e8d6ff; --butter:#fff3c4; --ink:#3a3340; --coral:#ff8fab;
+  --teal:#7fd8c4; --violet:#b89cff; --sun:#ffd166;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Fredoka',sans-serif; color:var(--ink);
+  background:#fdf6ee;
+  background-image:radial-gradient(#e8ddd0 1.2px, transparent 1.2px);
+  background-size:26px 26px;
+  overflow-x:hidden;
+}
+.hand{font-family:'Caveat',cursive}
+.doodle-font{font-family:'Gochi Hand',cursive}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--ink);color:var(--butter);overflow:hidden;white-space:nowrap;padding:9px 0;font-weight:600;letter-spacing:.5px;font-size:.85rem}
+.ticker-inner{display:inline-block;animation:scrollLeft 22s linear infinite}
+@keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker span{margin:0 18px}
+
+/* ---------- nav ---------- */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;position:sticky;top:0;z-index:50;background:rgba(253,246,238,.85);backdrop-filter:blur(8px);border-bottom:2px dashed #d9c9b8}
+.logo{font-family:'Caveat',cursive;font-size:1.9rem;font-weight:700;transform:rotate(-2deg)}
+.logo em{color:var(--coral);font-style:normal}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a{display:inline-block;text-decoration:none;color:var(--ink);font-weight:600;font-size:.85rem;padding:7px 15px;border:2px solid var(--ink);border-radius:30px;background:#fff;box-shadow:2.5px 2.5px 0 var(--ink);transition:.18s}
+nav a:hover{transform:translate(-2px,-2px) rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
+nav li:nth-child(1) a{background:var(--pink)} nav li:nth-child(2) a{background:var(--mint)}
+nav li:nth-child(3) a{background:var(--sky)} nav li:nth-child(4) a{background:var(--butter)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 5vw 110px}
+.hero h1{font-size:clamp(2.6rem,8vw,6.2rem);line-height:.98;font-weight:700;letter-spacing:-1px}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+.hero h1 .scribble{position:relative;display:inline-block;color:var(--coral)}
+.hero h1 .scribble svg{position:absolute;left:-4%;bottom:-14px;width:108%;height:24px}
+.hero .kicker{font-family:'Gochi Hand',cursive;font-size:clamp(1.1rem,2.6vw,1.6rem);margin-bottom:18px;background:var(--butter);display:inline-block;padding:6px 22px;border:2px solid var(--ink);border-radius:40px;box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg)}
+.hero p.sub{max-width:560px;margin:26px auto 34px;font-size:1.05rem;line-height:1.65;color:#5d5364}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;text-decoration:none;color:var(--ink);padding:14px 30px;border:2.5px solid var(--ink);border-radius:40px;box-shadow:4px 4px 0 var(--ink);transition:.18s;display:inline-block}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn.primary{background:var(--coral);color:#fff}
+.btn.ghost{background:#fff}
+.float{position:absolute;user-select:none;pointer-events:none}
+.f1{top:12%;left:7%;animation:bob 4s ease-in-out infinite}
+.f2{top:18%;right:9%;animation:bob 5s .6s ease-in-out infinite}
+.f3{bottom:14%;left:11%;animation:bob 4.5s .3s ease-in-out infinite}
+.f4{bottom:18%;right:8%;animation:bob 5.2s .9s ease-in-out infinite}
+.f5{top:48%;left:2%;animation:spinSlow 14s linear infinite}
+.f6{top:42%;right:3%;animation:spinSlow 16s linear infinite reverse}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(6deg)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.sticker{display:inline-block;padding:10px 16px;border:2px solid var(--ink);border-radius:14px;font-family:'Caveat',cursive;font-weight:700;font-size:1.25rem;box-shadow:3px 3px 0 var(--ink)}
+
+/* ---------- section shells ---------- */
+section{padding:90px 5vw;position:relative}
+.sec-head{text-align:center;margin-bottom:60px}
+.sec-head .tag{font-family:'Gochi Hand',cursive;display:inline-block;background:var(--lilac);border:2px solid var(--ink);padding:5px 18px;border-radius:30px;transform:rotate(2deg);box-shadow:3px 3px 0 var(--ink);margin-bottom:16px;font-size:1.05rem}
+.sec-head h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;letter-spacing:-.5px}
+.sec-head h2 mark{background:linear-gradient(transparent 55%,var(--sun) 55%);padding:0 4px}
+.torn{display:block;width:100%;height:30px}
+
+/* ---------- journey ---------- */
+.journey{background:var(--mint)}
+.timeline{max-width:880px;margin:0 auto;position:relative}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:3px dashed var(--ink);transform:translateX(-50%)}
+.chapter{display:flex;justify-content:flex-start;margin-bottom:70px;position:relative;width:100%}
+.chapter:nth-child(even){justify-content:flex-end}
+.chapter .dot{position:absolute;left:50%;top:24px;transform:translate(-50%,0);width:26px;height:26px;border-radius:50%;background:var(--coral);border:3px solid var(--ink);z-index:2;box-shadow:0 0 0 6px rgba(255,143,171,.3)}
+.card{width:44%;background:#fff;border:2.5px solid var(--ink);border-radius:18px;padding:26px 26px 22px;box-shadow:6px 6px 0 var(--ink);position:relative;transition:.25s}
+.card:hover{transform:rotate(0) translateY(-6px) !important}
+.chapter:nth-child(odd) .card{transform:rotate(-1.6deg)}
+.chapter:nth-child(even) .card{transform:rotate(1.6deg)}
+.tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);width:110px;height:28px;background:rgba(255,209,102,.85);border:1px solid rgba(58,51,64,.25);border-radius:3px}
+.chap-no{font-family:'Gochi Hand',cursive;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;color:#9a8da6;margin-bottom:6px}
+.card h3{font-size:1.3rem;margin-bottom:4px}
+.card .when{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--coral);font-weight:700;margin-bottom:10px}
+.card p{font-size:.93rem;line-height:1.6;color:#5d5364}
+.card .badge{display:inline-block;margin-top:12px;margin-right:6px;font-size:.72rem;font-weight:600;background:var(--sky);border:1.5px solid var(--ink);border-radius:20px;padding:4px 12px}
+
+/* ---------- work ---------- */
+.workgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:42px;max-width:1150px;margin:0 auto}
+.polaroid{background:#fff;border:2.5px solid var(--ink);padding:14px 14px 18px;box-shadow:7px 7px 0 var(--ink);transition:.25s;position:relative}
+.polaroid:nth-child(odd){transform:rotate(-2.2deg)} .polaroid:nth-child(even){transform:rotate(2deg)}
+.polaroid:hover{transform:rotate(0) scale(1.04);z-index:3}
+.polaroid .pin{position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:24px;height:24px;border-radius:50%;border:2.5px solid var(--ink);z-index:2}
+.art{height:260px;border:2px solid var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;background:var(--butter)}
+.art img{width:100%;height:100%;object-fit:cover;display:block}
+.art video{width:100%;height:100%;object-fit:cover;display:block}
+.art .big{font-size:4rem}
+/* carousel */
+.carousel{position:relative}
+.carousel img{position:absolute;inset:0;opacity:0;transition:opacity .35s}
+.carousel img.on{opacity:1}
+.cnav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#fff;border:2.5px solid var(--ink);box-shadow:2px 2px 0 var(--ink);font-size:1.1rem;font-weight:700;cursor:pointer;z-index:4;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',sans-serif}
+.cnav:hover{background:var(--butter)}
+.cnav.prev{left:8px}.cnav.next{right:8px}
+.cdots{position:absolute;bottom:8px;left:0;right:0;display:flex;gap:6px;justify-content:center;z-index:4}
+.cdots i{width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);opacity:.6}
+.cdots i.on{background:var(--coral);opacity:1}
+.count-tag{position:absolute;top:8px;right:8px;z-index:4;background:#fff;border:2px solid var(--ink);border-radius:20px;font-size:.7rem;font-weight:700;padding:3px 10px;box-shadow:2px 2px 0 var(--ink)}
+/* reels strip */
+.reels{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;max-width:1150px;margin:60px auto 0}
+.reel{width:200px;background:#fff;border:2.5px solid var(--ink);padding:10px 10px 14px;box-shadow:6px 6px 0 var(--ink);transition:.25s;position:relative}
+.reel:nth-child(odd){transform:rotate(-2deg)}.reel:nth-child(even){transform:rotate(2deg)}
+.reel:hover{transform:rotate(0) scale(1.05);z-index:3}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border:2px solid var(--ink);border-radius:8px;background:var(--ink)}
+.reel .cap{font-family:'Caveat',cursive;font-size:1.05rem;color:#7a6e85;text-align:center;margin-top:8px}
+/* hero photo */
+.hero-photo{width:190px;background:#fff;border:2.5px solid var(--ink);padding:10px 10px 30px;box-shadow:6px 6px 0 var(--ink);transform:rotate(3deg);margin:0 auto 26px;position:relative}
+.hero-photo img{width:100%;display:block;border:2px solid var(--ink);border-radius:6px}
+.hero-photo .tape{top:-14px}
+.hero-photo .hp-cap{font-family:'Caveat',cursive;font-size:1.15rem;position:absolute;bottom:2px;left:0;right:0;text-align:center}
+.polaroid h4{margin-top:14px;font-size:1.08rem}
+.polaroid .cap{font-family:'Caveat',cursive;font-size:1.1rem;color:#7a6e85}
+.swap-note{text-align:center;margin-top:46px;font-family:'Gochi Hand',cursive;font-size:1.15rem;color:#7a6e85}
+/* placeholder artworks */
+.a1{background:repeating-linear-gradient(45deg,var(--pink) 0 22px,var(--butter) 22px 44px)}
+.a2{background:radial-gradient(circle at 30% 30%,var(--sky) 0 26%,transparent 27%),radial-gradient(circle at 70% 60%,var(--lilac) 0 30%,transparent 31%),radial-gradient(circle at 45% 80%,var(--mint) 0 20%,transparent 21%),var(--butter)}
+.a3{background:conic-gradient(var(--coral),var(--sun),var(--teal),var(--violet),var(--coral))}
+.a4{background:linear-gradient(135deg,var(--mint),var(--sky))}
+.a5{background:repeating-radial-gradient(circle at 50% 50%,var(--peach) 0 16px,var(--pink) 16px 32px)}
+.a6{background:linear-gradient(180deg,var(--lilac),var(--pink))}
+.playbtn{width:74px;height:74px;border-radius:50%;background:#fff;border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:4px 4px 0 var(--ink)}
+.playbtn::after{content:"";border-left:22px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+
+/* ---------- toolbox ---------- */
+.toolbox{background:var(--sky)}
+.tools{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:980px;margin:0 auto}
+.tool{background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:22px 28px;box-shadow:5px 5px 0 var(--ink);text-align:center;min-width:150px;transition:.2s}
+.tool:hover{transform:translateY(-7px) rotate(-2deg)}
+.tool .ic{font-size:2.1rem;display:block;margin-bottom:8px}
+.tool b{display:block;font-size:.98rem}
+.tool small{font-family:'Caveat',cursive;font-size:1.05rem;color:#7a6e85}
+.skill-cloud{margin:54px auto 0;max-width:820px;text-align:center}
+.skill-cloud span{display:inline-block;margin:7px;padding:9px 20px;border:2px solid var(--ink);border-radius:30px;font-weight:600;font-size:.88rem;box-shadow:3px 3px 0 var(--ink);transition:.18s}
+.skill-cloud span:hover{transform:rotate(-3deg) scale(1.07)}
+.skill-cloud span:nth-child(5n+1){background:var(--pink)} .skill-cloud span:nth-child(5n+2){background:var(--butter)}
+.skill-cloud span:nth-child(5n+3){background:var(--mint)} .skill-cloud span:nth-child(5n+4){background:var(--lilac)}
+.skill-cloud span:nth-child(5n){background:var(--peach)}
+
+/* ---------- fun facts ---------- */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;max-width:1000px;margin:0 auto}
+.fact{border:2.5px solid var(--ink);border-radius:18px;padding:30px 24px;text-align:center;box-shadow:6px 6px 0 var(--ink);transition:.2s}
+.fact:hover{transform:translateY(-6px)}
+.fact:nth-child(1){background:var(--pink);transform:rotate(-1.5deg)} .fact:nth-child(2){background:var(--butter);transform:rotate(1.2deg)}
+.fact:nth-child(3){background:var(--mint);transform:rotate(-1deg)} .fact:nth-child(4){background:var(--lilac);transform:rotate(1.6deg)}
+.fact .num{font-size:2.6rem;font-weight:700}
+.fact p{font-size:.9rem;margin-top:6px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--peach);text-align:center}
+.contact h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;margin-bottom:14px}
+.contact .hand-line{font-family:'Caveat',cursive;font-size:1.5rem;color:#8a6f5c;margin-bottom:36px}
+footer{background:var(--ink);color:#cfc4da;text-align:center;padding:26px 5vw;font-size:.85rem}
+footer .hand{color:var(--butter);font-size:1.2rem}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:760px){
+  .timeline::before{left:14px}
+  .chapter,.chapter:nth-child(even){justify-content:flex-start}
+  .chapter .dot{left:14px}
+  .card{width:calc(100% - 54px);margin-left:54px}
+  .float{display:none}
+  nav{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker"><div class="ticker-inner">
+<span>✿ GRAPHIC DESIGN</span><span>✦ VIDEO EDITING</span><span>✿ BRAND STORYTELLING</span><span>✦ SOCIAL MEDIA MAGIC</span><span>✿ MUMBAI, INDIA</span><span>✦ KATHAK DANCER</span><span>✿ GRAPHIC DESIGN</span><span>✦ VIDEO EDITING</span><span>✿ BRAND STORYTELLING</span><span>✦ SOCIAL MEDIA MAGIC</span><span>✿ MUMBAI, INDIA</span><span>✦ KATHAK DANCER</span>
+</div></div>
+
+<nav>
+  <div class="logo">jaanvi<em>.</em>makes<em>.</em>things</div>
+  <ul>
+    <li><a href="#journey">my story</a></li>
+    <li><a href="#work">the work</a></li>
+    <li><a href="#toolbox">toolbox</a></li>
+    <li><a href="#contact">say hi</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="float f1"><span class="sticker" style="background:var(--pink)">hi, I'm Jaanvi! 👋</span></div>
+  <div class="float f2"><span class="sticker" style="background:var(--mint)">est. Mumbai ✈</span></div>
+  <div class="float f3"><span class="sticker" style="background:var(--sky)">cut. color. create. 🎬</span></div>
+  <div class="float f4"><span class="sticker" style="background:var(--butter)">pixel perfectionist ✏️</span></div>
+  <div class="float f5" style="font-size:2.6rem">✿</div>
+  <div class="float f6" style="font-size:2.4rem">✦</div>
+
+  <div class="hero-photo"><div class="tape"></div><img src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/profile-2026.jpeg" alt="Jaanvi Toshniwal"><span class="hp-cap">that's me! ✿</span></div>
+  <span class="kicker">a scrapbook of my creative life ↓</span>
+  <h1>I make brands<br><span class="outline">look</span> &amp; <span class="outline">feel</span><br>
+    <span class="scribble">unforgettable
+      <svg viewBox="0 0 300 24" preserveAspectRatio="none"><path d="M4 14 Q 50 4, 100 14 T 200 14 T 296 12" fill="none" stroke="#ffd166" stroke-width="7" stroke-linecap="round"/></svg>
+    </span>
+  </h1>
+  <p class="sub">Graphic designer &amp; video editor from Mumbai — turning ideas into scroll-stopping visuals, captivating edits, and brand stories people actually remember.</p>
+  <div class="hero-cta">
+    <a class="btn primary" href="#journey">walk through my journey →</a>
+    <a class="btn ghost" href="#work">just show me the work</a>
+  </div>
+</header>
+
+<svg class="torn" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,30 L0,12 L40,18 L85,8 L130,16 L180,6 L230,15 L280,9 L330,17 L380,7 L430,14 L480,8 L530,16 L580,6 L630,13 L680,18 L730,8 L780,15 L830,7 L880,16 L930,9 L980,14 L1030,6 L1080,15 L1130,9 L1200,14 L1200,30 Z" fill="#d6f5e3"/></svg>
+
+<section class="journey" id="journey">
+  <div class="sec-head reveal">
+    <span class="tag">chapter by chapter ✏️</span>
+    <h2>The <mark>Jaanvi</mark> Storyline</h2>
+  </div>
+  <div class="timeline">
+
+    <div class="chapter reveal"><span class="dot"></span>
+      <div class="card"><div class="tape"></div>
+        <div class="chap-no">Chapter 01 · The Spark</div>
+        <h3>A kid with too many colors 🖍️</h3>
+        <div class="when">St. Xavier's High School, Mumbai</div>
+        <p>Where it all began — doodling in margins, topping it off with an 85.2% in SSC. The grades said "academic," the sketchbooks said "artist."</p>
+        <span class="badge">SSC · 85.2%</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--teal)"></span>
+      <div class="card"><div class="tape" style="background:rgba(127,216,196,.8)"></div>
+        <div class="chap-no">Chapter 02 · The Rhythm</div>
+        <h3>Dance taught me design 💃</h3>
+        <div class="when">Kathak Diploma — completed</div>
+        <p>Years of Kathak built an obsession with rhythm, timing and expression — the exact instincts that now drive every video cut and motion beat I make.</p>
+        <span class="badge">Kathak Diploma</span><span class="badge">Timing → Editing</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--violet)"></span>
+      <div class="card"><div class="tape" style="background:rgba(184,156,255,.7)"></div>
+        <div class="chap-no">Chapter 03 · Finding My Voice</div>
+        <h3>HSC &amp; the leadership bug 🎤</h3>
+        <div class="when">KES Shroff College · 2021 – 2023</div>
+        <p>Finished HSC with 76.4% while discovering I loved running the show — literally — as Chairperson for RISMUN, leading delegates and debates.</p>
+        <span class="badge">HSC · 76.4%</span><span class="badge">RISMUN Chairperson</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--sun)"></span>
+      <div class="card"><div class="tape" style="background:rgba(255,209,102,.85)"></div>
+        <div class="chap-no">Chapter 04 · Leveling Up</div>
+        <h3>Marketing brain, designer heart 🧠</h3>
+        <div class="when">BMS Marketing, KES Shroff College · 2023 – 2026</div>
+        <p>Studying the strategy behind the visuals — why people click, share and buy. Stacked it with Google Digital Garage &amp; HubSpot Academy certifications in digital marketing.</p>
+        <span class="badge">BMS · GPA 7.33</span><span class="badge">Google Certified</span><span class="badge">HubSpot Certified</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--coral)"></span>
+      <div class="card"><div class="tape" style="background:rgba(255,143,171,.7)"></div>
+        <div class="chap-no">Chapter 05 · First Real Canvas</div>
+        <h3>Running socials for a fashion brand 👕</h3>
+        <div class="when">Social Media Manager, Graveyard Wear · Nov 2024 – Jan 2025</div>
+        <p>Owned the feed end-to-end — trend-spotting, creating visually loud content, optimizing posting schedules with analytics, and boosting engagement &amp; follower interaction.</p>
+        <span class="badge">Content Creation</span><span class="badge">Engagement ↑</span><span class="badge">Analytics</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--teal)"></span>
+      <div class="card"><div class="tape" style="background:rgba(127,216,196,.8)"></div>
+        <div class="chap-no">Chapter 06 · Design with Heart</div>
+        <h3>Creativity for a cause 💛</h3>
+        <div class="when">JUNOON &amp; Robinhood, Mumbai · Jan – Mar 2025</div>
+        <p>Volunteered as a teacher with JUNOON and ran food-drive logistics with Robinhood — using social media to amplify drives and bring real help to local families.</p>
+        <span class="badge">Teaching</span><span class="badge">Community</span><span class="badge">Social Amplification</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--sun)"></span>
+      <div class="card"><div class="tape" style="background:rgba(255,209,102,.85)"></div>
+        <div class="chap-no">Chapter 07 · Going Pro</div>
+        <h3>Designing for digital campaigns 🚀</h3>
+        <div class="when">Graphic Design Intern, 9by16 Media · May – June 2025</div>
+        <p>Designed graphics and short-form video assets for digital campaigns, collaborating remotely with the creative team and adapting creatives across formats while keeping every pixel on-brand.</p>
+        <span class="badge">Graphic Design</span><span class="badge">Short-form Video</span><span class="badge">Brand Consistency</span>
+      </div>
+    </div>
+
+    <div class="chapter reveal"><span class="dot" style="background:var(--violet)"></span>
+      <div class="card"><div class="tape" style="background:rgba(184,156,255,.7)"></div>
+        <div class="chap-no">Chapter 08 · Now Playing</div>
+        <h3>Open to the next big brief ✨</h3>
+        <div class="when">Today → the future</div>
+        <p>Concept-to-delivery designer &amp; editor, fluent in the full Adobe suite, hunting for brands that want visuals with a pulse. This chapter is yours to co-write.</p>
+        <span class="badge">Available for projects</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<svg class="torn" viewBox="0 0 1200 30" preserveAspectRatio="none" style="transform:scaleY(-1);background:#fdf6ee"><path d="M0,30 L0,12 L40,18 L85,8 L130,16 L180,6 L230,15 L280,9 L330,17 L380,7 L430,14 L480,8 L530,16 L580,6 L630,13 L680,18 L730,8 L780,15 L830,7 L880,16 L930,9 L980,14 L1030,6 L1080,15 L1130,9 L1200,14 L1200,30 Z" fill="#d6f5e3"/></svg>
+
+<section id="work">
+  <div class="sec-head reveal">
+    <span class="tag">fresh off the desk 🎨</span>
+    <h2>Pinned to the <mark>Wall</mark></h2>
+  </div>
+  <div class="workgrid">
+    <div class="polaroid reveal"><span class="pin" style="background:var(--coral)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ac0bcca9-e63a-41d5-8a39-2b24527e29d8.png" alt="Nike Jordan Sneaker Ad"></div>
+      <h4>Nike Jordan Sneaker Ad</h4><div class="cap">static creative · concept ad</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--teal)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/057f506d-637e-47e2-bc0c-c2fab7cbcb91.png" alt="Special Coffee Promotion"></div>
+      <h4>Special Coffee Promotion</h4><div class="cap">food &amp; beverage creative</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--violet)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3ae902da-309d-464e-afcd-be0b9384d53f.png" alt="UNA Face Cream Ad"></div>
+      <h4>UNA Face Cream Ad</h4><div class="cap">beauty &amp; skincare creative</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--sun)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ed532bef-aefb-4979-aa0f-37d808359a6f.png" alt="Soul Magik Product Showcase"></div>
+      <h4>Soul Magik Showcase</h4><div class="cap">product spotlight design</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--coral)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3f651eaf-8f41-4428-b56b-0925df3d86c4.png" alt="Sleepwell Diwali Campaign"></div>
+      <h4>Sleepwell Diwali Campaign</h4><div class="cap">festive brand campaign</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--teal)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/0952b4d0-7045-47b5-b228-70dc530e0df1.png" alt="Father's Day Special"></div>
+      <h4>Father's Day Special</h4><div class="cap">occasion creative</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--violet)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/a7754a1d-1f62-4b4c-9bb5-e1a70fac0369.png" alt="Health Awareness Campaign"></div>
+      <h4>Health Awareness</h4><div class="cap">cause-driven design</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--sun)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/e54577ea-cccd-4815-ab55-a6472b029fbf.png" alt="Burnout Awareness Post"></div>
+      <h4>Burnout Awareness</h4><div class="cap">wellness creative</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--coral)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/project-photo-colorization.jpeg" alt="Black & White to Color"></div>
+      <h4>B&amp;W → Color Magic</h4><div class="cap">photoshop colorization</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--teal)"></span>
+      <div class="art"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/project-photo-restoration.jpeg" alt="Photo Restoration"></div>
+      <h4>A Memory Revived</h4><div class="cap">photo restoration</div>
+    </div>
+  </div>
+
+  <div class="sec-head reveal" style="margin-top:90px">
+    <span class="tag">swipe-worthy stories 👉</span>
+    <h2>Carousel <mark>Diaries</mark></h2>
+  </div>
+  <div class="workgrid">
+    <div class="polaroid reveal"><span class="pin" style="background:var(--violet)"></span>
+      <div class="art carousel" data-carousel>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/2cb512ac-7b9d-4572-b74c-3921d74ef86e.png" alt="Education Reform - 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/d023837f-ebf9-4d90-9664-a7f9309d360a.png" alt="Education Reform - 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/72b24e3c-e76c-4ae1-ac66-a7397e2c6831.png" alt="Education Reform - 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/86639e99-d5eb-412e-96b0-4840f303d65a.png" alt="Education Reform - 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3a830c6e-ccd5-4aab-9e38-32b02ebdd351.png" alt="Education Reform - 5">
+        <span class="count-tag">5 slides</span>
+        <button class="cnav prev" aria-label="previous">‹</button><button class="cnav next" aria-label="next">›</button>
+        <div class="cdots"></div>
+      </div>
+      <h4>Education System Reform</h4><div class="cap">awareness carousel · 5 slides</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--sun)"></span>
+      <div class="art carousel" data-carousel>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ff504b01-51ac-459e-905a-f4333a2ed1d8.png" alt="Cycle Syncing - 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/fd1b80cb-98e1-457c-8d4a-ca6b01e70065.png" alt="Cycle Syncing - 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/4a7355bb-9b37-4020-8fa8-b685328ff195.png" alt="Cycle Syncing - 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/be9070e5-6751-4ecb-9201-d8b6fc12bada.png" alt="Cycle Syncing - 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/a47c5e29-0f27-418e-a537-6781979cb7f2.png" alt="Cycle Syncing - 5">
+        <span class="count-tag">5 slides</span>
+        <button class="cnav prev" aria-label="previous">‹</button><button class="cnav next" aria-label="next">›</button>
+        <div class="cdots"></div>
+      </div>
+      <h4>Cycle Syncing Wellness Guide</h4><div class="cap">wellness carousel · 5 slides</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--coral)"></span>
+      <div class="art carousel" data-carousel>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/da491ef6-736d-4a50-8edf-685f4b8a205e.png" alt="30 Days Retention - 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/f5d40458-8a02-40d1-817a-b9fcf897c96d.png" alt="30 Days Retention - 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/52bd3571-a5b9-4259-a890-0377323ad813.png" alt="30 Days Retention - 3">
+        <span class="count-tag">3 slides</span>
+        <button class="cnav prev" aria-label="previous">‹</button><button class="cnav next" aria-label="next">›</button>
+        <div class="cdots"></div>
+      </div>
+      <h4>30 Days Retention Strategy</h4><div class="cap">strategy carousel · 3 slides</div>
+    </div>
+    <div class="polaroid reveal"><span class="pin" style="background:var(--teal)"></span>
+      <div class="art carousel" data-carousel>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-1.jpeg" alt="Infographic 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-2.jpeg" alt="Infographic 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-3.jpeg" alt="Infographic 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-4.jpeg" alt="Infographic 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-5.jpeg" alt="Infographic 5">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-6.jpeg" alt="Infographic 6">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-7.jpeg" alt="Infographic 7">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-8.jpeg" alt="Infographic 8">
+        <span class="count-tag">8 slides</span>
+        <button class="cnav prev" aria-label="previous">‹</button><button class="cnav next" aria-label="next">›</button>
+        <div class="cdots"></div>
+      </div>
+      <h4>Infographic Collection</h4><div class="cap">data made delightful · 8 slides</div>
+    </div>
+  </div>
+
+  <div class="sec-head reveal" style="margin-top:90px">
+    <span class="tag">cut on the beat 🎬</span>
+    <h2>The <mark>Reel</mark> Deal</h2>
+  </div>
+  <div class="reels reveal">
+    <div class="reel"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-1.mov" controls muted playsinline preload="metadata"></video><div class="cap">reel 01</div></div>
+    <div class="reel"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-2.mov" controls muted playsinline preload="metadata"></video><div class="cap">reel 02</div></div>
+    <div class="reel"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-3.mov" controls muted playsinline preload="metadata"></video><div class="cap">reel 03</div></div>
+    <div class="reel"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-4.mov" controls muted playsinline preload="metadata"></video><div class="cap">reel 04</div></div>
+    <div class="reel"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-5.mov" controls muted playsinline preload="metadata"></video><div class="cap">reel 05</div></div>
+  </div>
+</section>
+
+<svg class="torn" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,30 L0,12 L40,18 L85,8 L130,16 L180,6 L230,15 L280,9 L330,17 L380,7 L430,14 L480,8 L530,16 L580,6 L630,13 L680,18 L730,8 L780,15 L830,7 L880,16 L930,9 L980,14 L1030,6 L1080,15 L1130,9 L1200,14 L1200,30 Z" fill="#d6ecff"/></svg>
+
+<section class="toolbox" id="toolbox">
+  <div class="sec-head reveal">
+    <span class="tag">weapons of mass creation 🧰</span>
+    <h2>The <mark>Toolbox</mark></h2>
+  </div>
+  <div class="tools reveal">
+    <div class="tool"><span class="ic">🎨</span><b>Photoshop</b><small>pixel surgeon</small></div>
+    <div class="tool"><span class="ic">🎬</span><b>Premiere Pro</b><small>story in the cut</small></div>
+    <div class="tool"><span class="ic">✨</span><b>After Effects</b><small>making things move</small></div>
+    <div class="tool"><span class="ic">🎙️</span><b>Audition</b><small>sound, sweetened</small></div>
+    <div class="tool"><span class="ic">🪄</span><b>Canva</b><small>fast &amp; fabulous</small></div>
+  </div>
+  <div class="skill-cloud reveal">
+    <span>visual design</span><span>imaginative design</span><span>digital video editing</span>
+    <span>digital marketing strategy</span><span>social media content</span><span>brand messaging</span>
+    <span>vendor sourcing</span><span>collaborative teamwork</span><span>problem resolution</span>
+    <span>prioritization &amp; scheduling</span><span>leadership</span><span>concept → delivery</span>
+  </div>
+</section>
+
+<svg class="torn" viewBox="0 0 1200 30" preserveAspectRatio="none" style="transform:scaleY(-1);background:#fdf6ee"><path d="M0,30 L0,12 L40,18 L85,8 L130,16 L180,6 L230,15 L280,9 L330,17 L380,7 L430,14 L480,8 L530,16 L580,6 L630,13 L680,18 L730,8 L780,15 L830,7 L880,16 L930,9 L980,14 L1030,6 L1080,15 L1130,9 L1200,14 L1200,30 Z" fill="#d6ecff"/></svg>
+
+<section>
+  <div class="sec-head reveal">
+    <span class="tag">receipts 🧾</span>
+    <h2>Little <mark>Brag</mark> Corner</h2>
+  </div>
+  <div class="facts">
+    <div class="fact reveal"><div class="num">2×</div><p>certified in digital marketing — Google Digital Garage &amp; HubSpot Academy</p></div>
+    <div class="fact reveal"><div class="num">5</div><p>creative tools mastered across the Adobe suite + Canva</p></div>
+    <div class="fact reveal"><div class="num">∞</div><p>hours of Kathak rhythm wired into every edit</p></div>
+    <div class="fact reveal"><div class="num">1</div><p>mission: visuals that make people feel something</p></div>
+  </div>
+</section>
+
+<svg class="torn" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,30 L0,12 L40,18 L85,8 L130,16 L180,6 L230,15 L280,9 L330,17 L380,7 L430,14 L480,8 L530,16 L580,6 L630,13 L680,18 L730,8 L780,15 L830,7 L880,16 L930,9 L980,14 L1030,6 L1080,15 L1130,9 L1200,14 L1200,30 Z" fill="#ffe8d6"/></svg>
+
+<section class="contact" id="contact">
+  <div class="reveal">
+    <span class="tag" style="font-family:'Gochi Hand',cursive;display:inline-block;background:#fff;border:2px solid var(--ink);padding:5px 18px;border-radius:30px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink);margin-bottom:18px">the next chapter could be yours ✉️</span>
+    <h2>Let's make something<br><span style="color:var(--coral)">unforgettable.</span></h2>
+    <p class="hand-line">~ based in Mumbai, creating for everywhere ~</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#" title="Add Jaanvi's email or contact form link here">drop me a line ✏️</a>
+      <a class="btn ghost" href="#" title="Add Jaanvi's LinkedIn URL here">find me on LinkedIn</a>
+    </div>
+    <p style="margin-top:26px;font-size:.8rem;color:#a08c7d">(hook these buttons up to your preferred email &amp; LinkedIn links)</p>
+  </div>
+</section>
+
+<footer>
+  <span class="hand">made with too much chai ☕ &amp; just enough chaos ✿</span><br><br>
+  © 2026 Jaanvi Toshniwal · Graphic Designer &amp; Video Editor · Mumbai
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('[data-carousel]').forEach(c=>{
+  const imgs=[...c.querySelectorAll('img')];
+  const dots=c.querySelector('.cdots');
+  imgs.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.classList.add('on');dots.appendChild(d)});
+  let idx=0;
+  const go=n=>{
+    imgs[idx].classList.remove('on');dots.children[idx].classList.remove('on');
+    idx=(n+imgs.length)%imgs.length;
+    imgs[idx].classList.add('on');dots.children[idx].classList.add('on');
+  };
+  c.querySelector('.prev').onclick=e=>{e.stopPropagation();go(idx-1)};
+  c.querySelector('.next').onclick=e=>{e.stopPropagation();go(idx+1)};
+});
+</script>
+</body>
+</html>
