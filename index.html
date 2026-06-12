@@ -97,8 +97,12 @@ section{padding:90px 5vw;position:relative}
 .polaroid:hover{transform:rotate(0) scale(1.04);z-index:3}
 .polaroid .pin{position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:24px;height:24px;border-radius:50%;border:2.5px solid var(--ink);z-index:2}
 .art{height:260px;border:2px solid var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;background:var(--butter)}
-.art img{width:100%;height:100%;object-fit:cover;display:block}
+.art img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
 .art video{width:100%;height:100%;object-fit:cover;display:block}
+/* on hover: reveal the full design, uncropped */
+.polaroid:hover .art{background:#fffdf8}
+.polaroid:hover .art img{object-fit:contain}
+.reel:hover video{object-fit:contain}
 .art .big{font-size:4rem}
 /* carousel */
 .carousel{position:relative}
@@ -479,10 +483,9 @@ footer .hand{color:var(--butter);font-size:1.2rem}
     <h2>Let's make something<br><span style="color:var(--coral)">unforgettable.</span></h2>
     <p class="hand-line">~ based in Mumbai, creating for everywhere ~</p>
     <div class="hero-cta">
-      <a class="btn primary" href="#" title="Add Jaanvi's email or contact form link here">drop me a line ✏️</a>
-      <a class="btn ghost" href="#" title="Add Jaanvi's LinkedIn URL here">find me on LinkedIn</a>
+      <a class="btn primary" href="mailto:YOUR_EMAIL_HERE?subject=Let%27s%20create%20something%20together%20%E2%9C%BF">drop me a line ✏️</a>
+      <a class="btn ghost" href="https://www.linkedin.com/search/results/people/?keywords=Jaanvi%20Toshniwal" target="_blank" rel="noopener">find me on LinkedIn</a>
     </div>
-    <p style="margin-top:26px;font-size:.8rem;color:#a08c7d">(hook these buttons up to your preferred email &amp; LinkedIn links)</p>
   </div>
 </section>
 
