@@ -115,6 +115,18 @@ section{padding:90px 5vw;position:relative}
 .cdots i{width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);opacity:.6}
 .cdots i.on{background:var(--coral);opacity:1}
 .count-tag{position:absolute;top:8px;right:8px;z-index:4;background:#fff;border:2px solid var(--ink);border-radius:20px;font-size:.7rem;font-weight:700;padding:3px 10px;box-shadow:2px 2px 0 var(--ink)}
+/* just dropped — new work showcase */
+.fresh{display:flex;gap:38px;justify-content:center;flex-wrap:wrap;max-width:1180px;margin:0 auto 110px}
+.drop{width:245px;background:#fff;border:2.5px solid var(--ink);padding:12px 12px 8px;box-shadow:8px 8px 0 var(--ink);position:relative;transition:.28s}
+.drop:nth-child(1){transform:rotate(-2.4deg)} .drop:nth-child(2){transform:rotate(1.8deg) translateY(22px)}
+.drop:nth-child(3){transform:rotate(-1.6deg)} .drop:nth-child(4){transform:rotate(2.4deg) translateY(22px)}
+.drop:hover{transform:rotate(0) translateY(-8px) scale(1.03);z-index:5;box-shadow:12px 12px 0 var(--ink)}
+.drop video{width:100%;aspect-ratio:9/16;object-fit:cover;border:2px solid var(--ink);border-radius:12px;background:var(--ink);display:block}
+.drop .tape{width:90px}
+.drop .newbadge{position:absolute;top:-16px;right:-14px;z-index:6;background:var(--sun);border:2px solid var(--ink);border-radius:30px;font-family:'Gochi Hand',cursive;font-size:.95rem;padding:4px 14px;transform:rotate(9deg);box-shadow:2.5px 2.5px 0 var(--ink)}
+.drop .cap{font-family:'Caveat',cursive;font-size:1.2rem;color:#7a6e85;text-align:center;padding:10px 0 6px}
+.drop .hint{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);background:rgba(255,255,255,.92);border:2px solid var(--ink);border-radius:24px;font-size:.7rem;font-weight:700;padding:5px 13px;pointer-events:none;transition:.25s;z-index:4}
+.drop:hover .hint{opacity:0}
 /* reels strip */
 .reels{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;max-width:1150px;margin:60px auto 0}
 .reel{width:200px;background:#fff;border:2.5px solid var(--ink);padding:10px 10px 14px;box-shadow:6px 6px 0 var(--ink);transition:.25s;position:relative}
@@ -319,6 +331,29 @@ footer .hand{color:var(--butter);font-size:1.2rem}
 
 <section id="work">
   <div class="sec-head reveal">
+    <span class="tag">hot off the timeline 🔥</span>
+    <h2>Just <mark>Dropped</mark></h2>
+  </div>
+  <div class="fresh reveal">
+    <div class="drop"><span class="newbadge">NEW ✦</span><div class="tape"></div>
+      <video src="assets/new-reel-01.mp4" muted loop playsinline preload="metadata"></video>
+      <span class="hint">hover to play ▸</span><div class="cap">fresh edit · 01</div>
+    </div>
+    <div class="drop"><span class="newbadge">NEW ✦</span><div class="tape" style="background:rgba(127,216,196,.8)"></div>
+      <video src="assets/new-reel-02.mp4" muted loop playsinline preload="metadata"></video>
+      <span class="hint">hover to play ▸</span><div class="cap">fresh edit · 02</div>
+    </div>
+    <div class="drop"><span class="newbadge">NEW ✦</span><div class="tape" style="background:rgba(184,156,255,.7)"></div>
+      <video src="assets/new-reel-03.mp4" muted loop playsinline preload="metadata"></video>
+      <span class="hint">hover to play ▸</span><div class="cap">fresh edit · 03</div>
+    </div>
+    <div class="drop"><span class="newbadge">NEW ✦</span><div class="tape" style="background:rgba(255,143,171,.7)"></div>
+      <video src="assets/new-reel-04.mp4" muted loop playsinline preload="metadata"></video>
+      <span class="hint">hover to play ▸</span><div class="cap">fresh edit · 04</div>
+    </div>
+  </div>
+
+  <div class="sec-head reveal">
     <span class="tag">fresh off the desk 🎨</span>
     <h2>Pinned to the <mark>Wall</mark></h2>
   </div>
@@ -510,6 +545,14 @@ document.querySelectorAll('[data-carousel]').forEach(c=>{
   };
   c.querySelector('.prev').onclick=e=>{e.stopPropagation();go(idx-1)};
   c.querySelector('.next').onclick=e=>{e.stopPropagation();go(idx+1)};
+});
+
+// just-dropped reels: play on hover, sound on click
+document.querySelectorAll('.drop').forEach(d=>{
+  const v=d.querySelector('video');
+  d.addEventListener('mouseenter',()=>{v.play()});
+  d.addEventListener('mouseleave',()=>{v.pause()});
+  v.addEventListener('click',()=>{v.muted=!v.muted;if(v.paused)v.play()});
 });
 </script>
 </body>
