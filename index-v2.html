@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaanvi Toshniwal — Graphic Designer & Video Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2; --ink:#16131d; --mut:#6b6377; --line:#e5ddd2;
+  --violet:#7c3aed; --pink:#ec4899; --amber:#f5a10b; --teal:#0fbfa5; --blue:#3b82f6; --lime:#a3e635;
+  --grad:linear-gradient(90deg,var(--violet),var(--pink),var(--amber));
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+.hand{font-family:'Caveat',cursive}
+::selection{background:var(--pink);color:#fff}
+
+/* progress bar */
+#pbar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:100}
+
+/* ticker */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:8px 0;font-size:.78rem;letter-spacing:2px;text-transform:uppercase}
+.ticker div{display:inline-block;animation:tick 26s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.ticker span{margin:0 22px}
+.ticker b{color:var(--amber)}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 6vw;position:sticky;top:0;z-index:60;background:rgba(250,247,242,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.05rem;letter-spacing:-.3px}
+.logo i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;color:var(--mut);font-size:.88rem;font-weight:500;transition:.2s}
+nav ul a:hover{color:var(--ink)}
+.navcta{text-decoration:none;background:var(--ink);color:#fff;font-size:.82rem;font-weight:600;padding:9px 20px;border-radius:30px;transition:.2s}
+.navcta:hover{background:var(--violet)}
+
+/* hero */
+.hero{position:relative;padding:80px 6vw 90px;display:grid;grid-template-columns:1.35fr .65fr;gap:50px;align-items:center;max-width:1250px;margin:0 auto}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;z-index:0}
+.b1{width:340px;height:340px;background:#e9d5ff;top:-60px;left:-80px}
+.b2{width:300px;height:300px;background:#fbcfe8;bottom:-40px;right:8%}
+.b3{width:220px;height:220px;background:#fde68a;top:30%;left:42%}
+.hero>div{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--mut);margin-bottom:22px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--grad)}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.9rem);line-height:1.02;letter-spacing:-2.5px;font-weight:700}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .wavy{position:relative;white-space:nowrap}
+.hero h1 .wavy::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:8px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 6 Q 12 0, 25 6 T 50 6 T 75 6 T 100 6" fill="none" stroke="%23f5a10b" stroke-width="3.2"/></svg>') repeat-x;background-size:90px 9px}
+.hero p{margin:26px 0 34px;color:var(--mut);font-size:1.04rem;line-height:1.75;max-width:520px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{text-decoration:none;font-weight:600;font-size:.94rem;padding:14px 28px;border-radius:32px;transition:.22s;display:inline-block}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:var(--violet);transform:translateY(-3px)}
+.btn.line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:34px}
+.chips span{font-size:.75rem;font-weight:600;padding:7px 14px;border-radius:20px;border:1.5px solid var(--ink)}
+.chips span:nth-child(1){background:#ede9fe}.chips span:nth-child(2){background:#fce7f3}
+.chips span:nth-child(3){background:#fef3c7}.chips span:nth-child(4){background:#ccfbf1}.chips span:nth-child(5){background:#dbeafe}
+.pframe{position:relative;justify-self:center}
+.pframe::before{content:"";position:absolute;inset:-14px;border:2px dashed var(--pink);border-radius:26px;transform:rotate(3deg)}
+.pframe img{width:min(300px,68vw);border-radius:20px;display:block;transform:rotate(-2deg);box-shadow:14px 16px 0 rgba(124,58,237,.16);transition:.3s}
+.pframe:hover img{transform:rotate(0)}
+.pframe .stick{position:absolute;font-family:'Caveat',cursive;font-size:1.15rem;font-weight:700;background:#fff;border:2px solid var(--ink);padding:5px 15px;border-radius:24px;box-shadow:3px 3px 0 var(--ink)}
+.s1{top:-20px;right:-16px;transform:rotate(7deg);background:var(--lime)}
+.s2{bottom:-14px;left:-24px;transform:rotate(-6deg);background:#fce7f3}
+
+/* marquee */
+.marq{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:#fff;padding:14px 0;overflow:hidden;white-space:nowrap}
+.marq div{display:inline-block;animation:tick 20s linear infinite;font-weight:700;font-size:1.05rem;letter-spacing:1px}
+.marq span{margin:0 26px}
+.marq .o{color:transparent;-webkit-text-stroke:1.2px var(--ink)}
+
+/* sections */
+section{padding:96px 6vw;max-width:1250px;margin:0 auto}
+.shead{margin-bottom:56px}
+.shead .eyebrow{margin-bottom:14px}
+.shead h2{font-size:clamp(1.9rem,4.4vw,3.1rem);letter-spacing:-1.5px;font-weight:700}
+.shead h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shead p{color:var(--mut);margin-top:12px;max-width:560px;line-height:1.7}
+
+/* ============ 3D CUBE ROADMAP ============ */
+.roadwrap{background:var(--ink);color:#fff;border-radius:34px;max-width:1250px;margin:0 6vw;padding:0}
+@media(min-width:1250px){.roadwrap{margin:0 auto}}
+.road{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;padding:90px 6vw;position:relative}
+.roadL{position:sticky;top:110px;height:fit-content;text-align:center}
+.roadL .eyebrow{color:#a89fb8;justify-content:center}
+.roadL h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-1px;margin-bottom:44px}
+.roadL h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.scene{width:220px;height:220px;margin:0 auto;perspective:950px}
+.cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.22,1,.36,1);transform:rotateX(-18deg) rotateY(24deg)}
+.face{position:absolute;inset:0;border-radius:20px;border:2.5px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:1.05rem;letter-spacing:.5px}
+.face b{font-size:2.9rem}
+.fF{background:var(--violet);transform:translateZ(110px)}
+.fR{background:var(--pink);transform:rotateY(90deg) translateZ(110px)}
+.fB{background:var(--amber);transform:rotateY(180deg) translateZ(110px)}
+.fL{background:var(--teal);transform:rotateY(-90deg) translateZ(110px)}
+.fT{background:var(--blue);transform:rotateX(90deg) translateZ(110px)}
+.fD{background:#84cc16;transform:rotateX(-90deg) translateZ(110px)}
+.cubecap{margin-top:40px}
+.cubecap .num{font-size:.78rem;letter-spacing:3px;color:#a89fb8;text-transform:uppercase}
+.cubecap .lbl{font-family:'Caveat',cursive;font-size:1.7rem;margin-top:6px;color:var(--amber);min-height:2.2rem}
+.pmeter{width:180px;height:5px;background:#332d3d;border-radius:4px;margin:18px auto 0;overflow:hidden}
+.pmeter i{display:block;height:100%;width:0;background:var(--grad);border-radius:4px;transition:width .5s}
+.stops{display:flex;flex-direction:column;gap:26px}
+.stop{background:#211c2b;border:1.5px solid #383144;border-radius:22px;padding:30px 32px;transition:.35s;opacity:.45;transform:translateX(14px)}
+.stop.on{opacity:1;transform:none;border-color:var(--violet);box-shadow:0 0 0 1px var(--violet), 0 18px 44px -18px rgba(124,58,237,.55)}
+.stop .k{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.stop .k i{font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--ink);background:var(--amber);padding:4px 12px;border-radius:16px;text-transform:uppercase}
+.stop .k time{font-size:.8rem;color:#a89fb8}
+.stop h3{font-size:1.2rem;margin-bottom:8px}
+.stop p{font-size:.9rem;line-height:1.7;color:#c4bccf}
+.stop .tags{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+.stop .tags span{font-size:.7rem;font-weight:600;border:1px solid #4d4560;color:#cfc7dc;padding:4px 11px;border-radius:16px}
+
+/* ============ WORK ============ */
+.dropgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
+.vcard{position:relative;border-radius:20px;overflow:hidden;border:2px solid var(--ink);background:var(--ink);box-shadow:7px 7px 0 var(--ink);transition:.25s}
+.vcard:nth-child(odd):hover{transform:translate(-3px,-6px) rotate(-1deg)}
+.vcard:nth-child(even):hover{transform:translate(-3px,-6px) rotate(1deg)}
+.vcard video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.vcard .tagr{position:absolute;top:12px;left:12px;background:var(--lime);border:1.5px solid var(--ink);font-size:.68rem;font-weight:700;letter-spacing:1.5px;padding:4px 11px;border-radius:16px}
+.vcard .hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.94);font-size:.7rem;font-weight:700;padding:5px 13px;border-radius:16px;transition:.25s;pointer-events:none}
+.vcard:hover .hint{opacity:0}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:26px}
+.wcard{background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:7px 7px 0 var(--ink);transition:.25s;position:relative}
+.wcard:hover{transform:translateY(-6px);box-shadow:10px 12px 0 var(--violet)}
+.wart{height:250px;overflow:hidden;border-bottom:2px solid var(--ink);position:relative;background:#f6efe4}
+.wart img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+.wcard:hover .wart img{object-fit:contain}
+.wmeta{padding:16px 18px 18px}
+.wmeta h4{font-size:1rem;letter-spacing:-.2px}
+.wmeta small{color:var(--mut);font-size:.8rem}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px}
+/* carousels */
+.cwrap{position:relative;height:250px;border-bottom:2px solid var(--ink);overflow:hidden;background:#f6efe4}
+.cwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.cwrap img.on{opacity:1}
+.wcard:hover .cwrap img{object-fit:contain}
+.cbtn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:#fff;font-size:1rem;font-weight:700;cursor:pointer;z-index:3;font-family:inherit}
+.cbtn:hover{background:var(--amber)}
+.cbtn.p{left:10px}.cbtn.n{right:10px}
+.slct{position:absolute;top:10px;right:10px;background:#fff;border:1.5px solid var(--ink);border-radius:14px;font-size:.68rem;font-weight:700;padding:3px 10px;z-index:3}
+/* reels row */
+.rrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px}
+.rrow .vcard video{aspect-ratio:9/16}
+
+/* toolbox */
+.toolrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+.tool{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:24px 20px;text-align:center;box-shadow:5px 5px 0 var(--ink);transition:.2s}
+.tool:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:5px 8px 0 var(--pink)}
+.tool b{display:block;margin-top:8px;font-size:.95rem}
+.tool span{font-size:1.8rem}
+.tool small{color:var(--mut);font-size:.78rem}
+.cloud{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px}
+.cloud span{font-size:.8rem;font-weight:600;padding:8px 17px;border-radius:22px;border:1.5px solid var(--ink);background:#fff;transition:.18s}
+.cloud span:hover{transform:rotate(-2deg) scale(1.06)}
+.cloud span:nth-child(4n+1){background:#ede9fe}.cloud span:nth-child(4n+2){background:#fce7f3}
+.cloud span:nth-child(4n+3){background:#fef3c7}.cloud span:nth-child(4n){background:#ccfbf1}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.scard{border:2px solid var(--ink);border-radius:22px;padding:30px 26px;background:#fff;position:relative;box-shadow:6px 6px 0 var(--ink);transition:.22s}
+.scard:hover{transform:translateY(-6px)}
+.scard:nth-child(1){background:#ede9fe}.scard:nth-child(2){background:#fce7f3}
+.scard:nth-child(3){background:#fef3c7}.scard:nth-child(4){background:#ccfbf1}
+.scard .pop{position:absolute;top:-13px;right:16px;background:var(--ink);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:1.5px;padding:5px 13px;border-radius:16px;text-transform:uppercase}
+.scard h3{font-size:1.12rem;margin-bottom:10px}
+.scard p{font-size:.88rem;line-height:1.65;color:#4d4557}
+.scard ul{margin-top:14px;list-style:none}
+.scard li{font-size:.82rem;margin-bottom:6px;padding-left:20px;position:relative;color:#3d3648}
+.scard li::before{content:"✦";position:absolute;left:0;color:var(--violet)}
+
+/* contact */
+.contact{text-align:center;padding-bottom:120px}
+.contact h2{font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-2px;line-height:1.05}
+.contact h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact .hand{font-size:1.5rem;color:var(--mut);display:block;margin:18px 0 36px}
+footer{border-top:1.5px solid var(--ink);padding:26px 6vw;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--mut)}
+footer .hand{font-size:1.1rem;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:.7s ease}
+.rv.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;gap:60px}
+  .hero p{margin-inline:auto}.cta,.chips{justify-content:center}
+  .eyebrow{justify-content:center}
+  .road{grid-template-columns:1fr}
+  .roadL{position:relative;top:0}
+  nav ul{display:none}
+}
+</style>
+</head>
+<body>
+<div id="pbar"></div>
+
+<div class="ticker"><div>
+<span>JAANVI TOSHNIWAL <b>✦</b> GRAPHIC DESIGN</span><span>VIDEO EDITING <b>✦</b> BRAND STORYTELLING</span><span>SOCIAL CAMPAIGNS <b>✦</b> MOTION</span><span>MUMBAI, INDIA <b>✦</b> AVAILABLE FOR WORK</span><span>JAANVI TOSHNIWAL <b>✦</b> GRAPHIC DESIGN</span><span>VIDEO EDITING <b>✦</b> BRAND STORYTELLING</span><span>SOCIAL CAMPAIGNS <b>✦</b> MOTION</span><span>MUMBAI, INDIA <b>✦</b> AVAILABLE FOR WORK</span>
+</div></div>
+
+<nav>
+  <div class="logo">Jaanvi<i>✦</i>Toshniwal</div>
+  <ul>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#drops">New Drops</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#toolbox">Toolbox</a></li>
+    <li><a href="#services">Services</a></li>
+  </ul>
+  <a class="navcta" href="#contact">Let's talk ✦</a>
+</nav>
+
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div>
+    <span class="eyebrow">Graphic Designer & Video Editor · Mumbai</span>
+    <h1>Designs that behave.<br><em>Ideas</em> that <span class="wavy">absolutely don't.</span></h1>
+    <p>I turn brand briefs into scroll-stopping creatives, beat-perfect edits, and campaigns people actually remember. Concept to delivery, pixels to motion — with a marketing brain wired in.</p>
+    <div class="cta">
+      <a class="btn dark" href="#work">See the work ↓</a>
+      <a class="btn line" href="#journey">Follow the journey</a>
+    </div>
+    <div class="chips">
+      <span>Photoshop</span><span>Premiere Pro</span><span>After Effects</span><span>Audition</span><span>Canva</span>
+    </div>
+  </div>
+  <div class="pframe">
+    <img src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/profile-2026.jpeg" alt="Jaanvi Toshniwal">
+    <span class="stick s1">that's me ✦</span>
+    <span class="stick s2">BMS · Class of 2026</span>
+  </div>
+</header>
+
+<div class="marq"><div>
+<span>BRANDING</span><span class="o">CAROUSELS</span><span>REELS</span><span class="o">STATICS</span><span>MOTION</span><span class="o">CAMPAIGNS</span><span>RESTORATION</span><span class="o">INFOGRAPHICS</span><span>BRANDING</span><span class="o">CAROUSELS</span><span>REELS</span><span class="o">STATICS</span><span>MOTION</span><span class="o">CAMPAIGNS</span><span>RESTORATION</span><span class="o">INFOGRAPHICS</span>
+</div></div>
+
+<section id="journey" style="padding-left:0;padding-right:0;max-width:none">
+<div class="roadwrap">
+  <div class="road">
+    <div class="roadL">
+      <span class="eyebrow" style="color:#a89fb8">scroll to spin the cube</span>
+      <h2>The Creative <em>Roadmap</em></h2>
+      <div class="scene"><div class="cube" id="cube">
+        <div class="face fF"><b>✏️</b>SKETCH</div>
+        <div class="face fR"><b>🎨</b>DESIGN</div>
+        <div class="face fB"><b>🎬</b>EDIT</div>
+        <div class="face fL"><b>✨</b>MOTION</div>
+        <div class="face fT"><b>📣</b>AMPLIFY</div>
+        <div class="face fD"><b>🚀</b>DELIVER</div>
+      </div></div>
+      <div class="cubecap">
+        <div class="num">Chapter <span id="chapnum">01</span> / 08</div>
+        <div class="lbl" id="chaplbl">where it all began</div>
+        <div class="pmeter"><i id="pfill"></i></div>
+      </div>
+    </div>
+    <div class="stops" id="stops">
+      <div class="stop" data-lbl="where it all began">
+        <div class="k"><i>Spark</i><time>St. Xavier's High School</time></div>
+        <h3>A kid with too many colors</h3>
+        <p>Doodles in every margin, and an 85.2% in SSC on top. The report card said academic — the sketchbooks said otherwise.</p>
+        <div class="tags"><span>SSC · 85.2%</span></div>
+      </div>
+      <div class="stop" data-lbl="rhythm becomes design">
+        <div class="k"><i>Rhythm</i><time>Kathak Diploma</time></div>
+        <h3>Dance taught me timing</h3>
+        <p>Years of Kathak wired in an obsession with rhythm and expression — the same instincts that now drive every cut, beat and motion curve.</p>
+        <div class="tags"><span>Kathak Diploma</span><span>Timing → Editing</span></div>
+      </div>
+      <div class="stop" data-lbl="finding the voice">
+        <div class="k"><i>Voice</i><time>KES Shroff College · 2021–23</time></div>
+        <h3>HSC & the leadership bug</h3>
+        <p>76.4% in HSC while chairing RISMUN — running the room, the debates and the delegates. Turns out direction comes naturally.</p>
+        <div class="tags"><span>HSC · 76.4%</span><span>RISMUN Chairperson</span></div>
+      </div>
+      <div class="stop" data-lbl="strategy meets art">
+        <div class="k"><i>Strategy</i><time>BMS Marketing · 2023–26</time></div>
+        <h3>Marketing brain, designer heart</h3>
+        <p>Studying why people click, share and buy — stacked with Google Digital Garage and HubSpot Academy digital-marketing certifications.</p>
+        <div class="tags"><span>BMS · GPA 7.33</span><span>Google Certified</span><span>HubSpot Certified</span></div>
+      </div>
+      <div class="stop" data-lbl="first real canvas">
+        <div class="k"><i>Canvas</i><time>Graveyard Wear · Nov 2024–Jan 2025</time></div>
+        <h3>Running socials for a fashion brand</h3>
+        <p>Owned the feed end-to-end: brand-aligned content, analytics-tuned schedules, interactive campaigns and a community that kept growing.</p>
+        <div class="tags"><span>Content Strategy</span><span>Brand Identity</span><span>Analytics</span></div>
+      </div>
+      <div class="stop" data-lbl="design with heart">
+        <div class="k"><i>Heart</i><time>JUNOON & Robin Hood Army · 2025</time></div>
+        <h3>Creativity for a cause</h3>
+        <p>Taught students from diverse backgrounds and ran food-drive logistics — using design and social media to amplify community impact.</p>
+        <div class="tags"><span>Teaching</span><span>Community</span><span>Outreach</span></div>
+      </div>
+      <div class="stop" data-lbl="going pro">
+        <div class="k"><i>Pro</i><time>9by16 Media · May–Jun 2025</time></div>
+        <h3>Designing for digital campaigns</h3>
+        <p>Graphics and short-form video assets for live campaigns — collaborating remotely, adapting creatives across formats, always on-brand.</p>
+        <div class="tags"><span>Graphic Design</span><span>Short-form Video</span><span>Brand Consistency</span></div>
+      </div>
+      <div class="stop" data-lbl="your brief goes here">
+        <div class="k"><i>Next</i><time>Today → the future</time></div>
+        <h3>Open to the next big brief</h3>
+        <p>Concept-to-delivery designer and editor, fluent in the full Adobe suite, looking for brands that want visuals with a pulse. This chapter is co-written with you.</p>
+        <div class="tags"><span>Available for work</span><span>Freelance · Full-time · Collabs</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="drops">
+  <div class="shead rv">
+    <span class="eyebrow">hot off the timeline</span>
+    <h2>Just <em>Dropped</em></h2>
+    <p>The newest edits — hover to play, click for sound.</p>
+  </div>
+  <div class="dropgrid rv">
+    <div class="vcard"><span class="tagr">NEW ✦</span><video src="assets/new-reel-01.mp4" muted loop playsinline preload="metadata"></video><span class="hint">hover to play ▸</span></div>
+    <div class="vcard"><span class="tagr">NEW ✦</span><video src="assets/new-reel-02.mp4" muted loop playsinline preload="metadata"></video><span class="hint">hover to play ▸</span></div>
+    <div class="vcard"><span class="tagr">NEW ✦</span><video src="assets/new-reel-03.mp4" muted loop playsinline preload="metadata"></video><span class="hint">hover to play ▸</span></div>
+    <div class="vcard"><span class="tagr">NEW ✦</span><video src="assets/new-reel-04.mp4" muted loop playsinline preload="metadata"></video><span class="hint">hover to play ▸</span></div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="shead rv">
+    <span class="eyebrow">selected statics</span>
+    <h2>Work that <em>works</em></h2>
+    <p>Hover any piece to see the full, uncropped design.</p>
+  </div>
+  <div class="wgrid rv">
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ac0bcca9-e63a-41d5-8a39-2b24527e29d8.png" alt="Nike Jordan Sneaker Ad"></div><div class="wmeta"><h4><span class="dot" style="background:var(--violet)"></span>Nike Jordan Sneaker Ad</h4><small>static · concept ad</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/057f506d-637e-47e2-bc0c-c2fab7cbcb91.png" alt="Special Coffee Promotion"></div><div class="wmeta"><h4><span class="dot" style="background:var(--pink)"></span>Special Coffee Promotion</h4><small>food & beverage</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3ae902da-309d-464e-afcd-be0b9384d53f.png" alt="UNA Face Cream Ad"></div><div class="wmeta"><h4><span class="dot" style="background:var(--amber)"></span>UNA Face Cream Ad</h4><small>beauty & skincare</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ed532bef-aefb-4979-aa0f-37d808359a6f.png" alt="Soul Magik Product Showcase"></div><div class="wmeta"><h4><span class="dot" style="background:var(--teal)"></span>Soul Magik Showcase</h4><small>product spotlight</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3f651eaf-8f41-4428-b56b-0925df3d86c4.png" alt="Sleepwell Diwali Campaign"></div><div class="wmeta"><h4><span class="dot" style="background:var(--blue)"></span>Sleepwell Diwali Campaign</h4><small>festive campaign</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/0952b4d0-7045-47b5-b228-70dc530e0df1.png" alt="Father's Day Special"></div><div class="wmeta"><h4><span class="dot" style="background:var(--violet)"></span>Father's Day Special</h4><small>occasion creative</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/a7754a1d-1f62-4b4c-9bb5-e1a70fac0369.png" alt="Health Awareness Campaign"></div><div class="wmeta"><h4><span class="dot" style="background:var(--pink)"></span>Health Awareness</h4><small>cause-driven</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/e54577ea-cccd-4815-ab55-a6472b029fbf.png" alt="Burnout Awareness Post"></div><div class="wmeta"><h4><span class="dot" style="background:var(--amber)"></span>Burnout Awareness</h4><small>wellness creative</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/project-photo-colorization.jpeg" alt="B&W to Color"></div><div class="wmeta"><h4><span class="dot" style="background:var(--teal)"></span>B&W → Color Magic</h4><small>photoshop colorization</small></div></div>
+    <div class="wcard"><div class="wart"><img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/project-photo-restoration.jpeg" alt="Photo Restoration"></div><div class="wmeta"><h4><span class="dot" style="background:var(--blue)"></span>A Memory Revived</h4><small>photo restoration</small></div></div>
+  </div>
+
+  <div class="shead rv" style="margin-top:90px">
+    <span class="eyebrow">swipe-worthy stories</span>
+    <h2>Carousel <em>Diaries</em></h2>
+  </div>
+  <div class="wgrid rv">
+    <div class="wcard">
+      <div class="cwrap" data-car>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/2cb512ac-7b9d-4572-b74c-3921d74ef86e.png" alt="Education Reform 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/d023837f-ebf9-4d90-9664-a7f9309d360a.png" alt="Education Reform 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/72b24e3c-e76c-4ae1-ac66-a7397e2c6831.png" alt="Education Reform 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/86639e99-d5eb-412e-96b0-4840f303d65a.png" alt="Education Reform 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/3a830c6e-ccd5-4aab-9e38-32b02ebdd351.png" alt="Education Reform 5">
+        <span class="slct">1/5</span><button class="cbtn p">‹</button><button class="cbtn n">›</button>
+      </div>
+      <div class="wmeta"><h4><span class="dot" style="background:var(--violet)"></span>Education System Reform</h4><small>awareness carousel · 5 slides</small></div>
+    </div>
+    <div class="wcard">
+      <div class="cwrap" data-car>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/ff504b01-51ac-459e-905a-f4333a2ed1d8.png" alt="Cycle Syncing 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/fd1b80cb-98e1-457c-8d4a-ca6b01e70065.png" alt="Cycle Syncing 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/4a7355bb-9b37-4020-8fa8-b685328ff195.png" alt="Cycle Syncing 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/be9070e5-6751-4ecb-9201-d8b6fc12bada.png" alt="Cycle Syncing 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/a47c5e29-0f27-418e-a537-6781979cb7f2.png" alt="Cycle Syncing 5">
+        <span class="slct">1/5</span><button class="cbtn p">‹</button><button class="cbtn n">›</button>
+      </div>
+      <div class="wmeta"><h4><span class="dot" style="background:var(--pink)"></span>Cycle Syncing Wellness</h4><small>wellness carousel · 5 slides</small></div>
+    </div>
+    <div class="wcard">
+      <div class="cwrap" data-car>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/da491ef6-736d-4a50-8edf-685f4b8a205e.png" alt="30 Days Retention 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/f5d40458-8a02-40d1-817a-b9fcf897c96d.png" alt="30 Days Retention 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/52bd3571-a5b9-4259-a890-0377323ad813.png" alt="30 Days Retention 3">
+        <span class="slct">1/3</span><button class="cbtn p">‹</button><button class="cbtn n">›</button>
+      </div>
+      <div class="wmeta"><h4><span class="dot" style="background:var(--amber)"></span>30 Days Retention Strategy</h4><small>strategy carousel · 3 slides</small></div>
+    </div>
+    <div class="wcard">
+      <div class="cwrap" data-car>
+        <img loading="lazy" class="on" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-1.jpeg" alt="Infographic 1">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-2.jpeg" alt="Infographic 2">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-3.jpeg" alt="Infographic 3">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-4.jpeg" alt="Infographic 4">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-5.jpeg" alt="Infographic 5">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-6.jpeg" alt="Infographic 6">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-7.jpeg" alt="Infographic 7">
+        <img loading="lazy" src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/infographic-8.jpeg" alt="Infographic 8">
+        <span class="slct">1/8</span><button class="cbtn p">‹</button><button class="cbtn n">›</button>
+      </div>
+      <div class="wmeta"><h4><span class="dot" style="background:var(--teal)"></span>Infographic Collection</h4><small>data made delightful · 8 slides</small></div>
+    </div>
+  </div>
+
+  <div class="shead rv" style="margin-top:90px">
+    <span class="eyebrow">cut on the beat</span>
+    <h2>The <em>Reel</em> Archive</h2>
+  </div>
+  <div class="rrow rv">
+    <div class="vcard"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-1.mov" controls muted playsinline preload="none"></video></div>
+    <div class="vcard"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-2.mov" controls muted playsinline preload="none"></video></div>
+    <div class="vcard"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-3.mov" controls muted playsinline preload="none"></video></div>
+    <div class="vcard"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-4.mov" controls muted playsinline preload="none"></video></div>
+    <div class="vcard"><video src="https://jaanvi-toshniwal-creative-hub.lovable.app/lovable-uploads/reel-5.mov" controls muted playsinline preload="none"></video></div>
+  </div>
+</section>
+
+<section id="toolbox" style="padding-top:0">
+  <div class="shead rv">
+    <span class="eyebrow">weapons of mass creation</span>
+    <h2>The <em>Toolbox</em></h2>
+  </div>
+  <div class="toolrow rv">
+    <div class="tool"><span>🎨</span><b>Photoshop</b><small>pixel surgeon</small></div>
+    <div class="tool"><span>🎬</span><b>Premiere Pro</b><small>story in the cut</small></div>
+    <div class="tool"><span>✨</span><b>After Effects</b><small>making things move</small></div>
+    <div class="tool"><span>🎙️</span><b>Audition</b><small>sound, sweetened</small></div>
+    <div class="tool"><span>🪄</span><b>Canva</b><small>fast & fabulous</small></div>
+  </div>
+  <div class="cloud rv">
+    <span>Visual Design</span><span>Branding & Identity</span><span>Typography & Layout</span><span>Creative Concepting</span>
+    <span>Motion Graphics</span><span>Video Editing</span><span>Visual Storytelling</span><span>Content Creation</span>
+    <span>Digital Marketing Strategy</span><span>Social Media Management</span><span>Campaign Planning</span><span>Content Optimization</span>
+    <span>Audience Engagement</span><span>Leadership</span><span>Problem Resolution</span><span>Prioritization</span>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="shead rv">
+    <span class="eyebrow">how we can work together</span>
+    <h2>Services, <em>served hot</em></h2>
+  </div>
+  <div class="svc rv">
+    <div class="scard"><span class="pop">Most Popular</span><h3>Social Media Creatives</h3><p>Eye-catching designs that stop the scroll and drive engagement across platforms.</p><ul><li>Platform-optimized designs</li><li>Brand-consistent visuals</li><li>Quick turnaround</li></ul></div>
+    <div class="scard"><span class="pop">Best Results</span><h3>Carousel Post Design</h3><p>Multi-slide storytelling that keeps audiences swiping to the last frame.</p><ul><li>Strategic flow design</li><li>Interactive storytelling</li><li>CTA optimization</li></ul></div>
+    <div class="scard"><h3>Static Post Design</h3><p>Impactful single-image designs that communicate clearly and beautifully.</p><ul><li>High-impact visuals</li><li>Clear message hierarchy</li><li>Multiple format options</li></ul></div>
+    <div class="scard"><span class="pop">Premium</span><h3>Visual Branding Support</h3><p>Consistent identity across every touchpoint to build recognition and trust.</p><ul><li>Brand guide development</li><li>Logo adaptations</li><li>Color & type systems</li></ul></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="rv">
+    <span class="eyebrow" style="justify-content:center">the next chapter could be yours</span>
+    <h2>Let's make something<br><em>unforgettable.</em></h2>
+    <span class="hand">~ based in Mumbai, creating for everywhere ~</span>
+    <div class="cta" style="justify-content:center">
+      <a class="btn dark" href="mailto:YOUR_EMAIL_HERE?subject=Let%27s%20create%20something%20together%20%E2%9C%A6">Drop me a line ✏️</a>
+      <a class="btn line" href="https://www.linkedin.com/search/results/people/?keywords=Jaanvi%20Toshniwal" target="_blank" rel="noopener">Find me on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Jaanvi Toshniwal · Graphic Designer & Video Editor · Mumbai</span>
+  <span class="hand">made with too much chai ☕ & just enough chaos ✦</span>
+</footer>
+
+<script>
+// scroll progress bar
+const pbar=document.getElementById('pbar');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  pbar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ===== 3D cube roadmap =====
+const cube=document.getElementById('cube'),stops=[...document.querySelectorAll('.stop')],
+chapnum=document.getElementById('chapnum'),chaplbl=document.getElementById('chaplbl'),pfill=document.getElementById('pfill');
+// tumbling poses — each chapter lands on a face
+const poses=[
+ 'rotateX(-18deg) rotateY(24deg)',            // 1 front  SKETCH
+ 'rotateX(-18deg) rotateY(-66deg)',           // 2 right  DESIGN
+ 'rotateX(-18deg) rotateY(-156deg)',          // 3 back   EDIT
+ 'rotateX(-18deg) rotateY(-246deg)',          // 4 left   MOTION
+ 'rotateX(-108deg) rotateY(-246deg)',         // 5 bottom→DELIVER tilt
+ 'rotateX(72deg) rotateY(-246deg)',           // 6 top    AMPLIFY
+ 'rotateX(-18deg) rotateY(-336deg)',          // 7 front again (full lap)
+ 'rotateX(-18deg) rotateY(-426deg) rotateZ(8deg)' // 8 right, victory tilt
+];
+const sio=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const i=stops.indexOf(e.target);
+      stops.forEach((s,j)=>s.classList.toggle('on',j===i));
+      cube.style.transform=poses[i];
+      chapnum.textContent=String(i+1).padStart(2,'0');
+      chaplbl.textContent=e.target.dataset.lbl;
+      pfill.style.width=((i+1)/stops.length*100)+'%';
+    }
+  });
+},{rootMargin:'-42% 0px -42% 0px'});
+stops.forEach(s=>sio.observe(s));
+
+// idle spin until first scroll into roadmap
+let idle=setInterval(()=>{
+  const t=Date.now()/1400;
+  if(!document.querySelector('.stop.on')) cube.style.transform=`rotateX(-18deg) rotateY(${24+Math.sin(t)*14}deg)`;
+  else clearInterval(idle);
+},60);
+
+// carousels
+document.querySelectorAll('[data-car]').forEach(c=>{
+  const imgs=[...c.querySelectorAll('img')],ct=c.querySelector('.slct');let i=0;
+  const go=n=>{imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('on');ct.textContent=(i+1)+'/'+imgs.length};
+  c.querySelector('.p').onclick=()=>go(i-1);
+  c.querySelector('.n').onclick=()=>go(i+1);
+});
+
+// hover-play drops
+document.querySelectorAll('#drops .vcard').forEach(d=>{
+  const v=d.querySelector('video');
+  d.addEventListener('mouseenter',()=>v.play());
+  d.addEventListener('mouseleave',()=>v.pause());
+  v.addEventListener('click',()=>{v.muted=!v.muted;if(v.paused)v.play()});
+});
+</script>
+</body>
+</html>
